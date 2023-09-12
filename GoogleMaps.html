@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./custom.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDBsd3jR6tyVnO0ionOa7QvBWkQYWQV3Pc&libraries=places"></script>
+ <style>
+  #review {
+  background-color: #2e05aa !important;
+  padding: 10px;
+}.content-container {
+  max-width: 400px; 
+  margin: 0 auto; 
+}
+
+.info-window-content {
+  width: min-content !important; 
+
+}
+.info-window-content hr{
+  height: 3px;
+  border-top: 2px solid whitesmoke;
+}
+
+.info-container {
+  display: flex;
+  align-items: center;
+  max-width: fit-content !important;
+}
+
+.image-container {
+  display: flex;
+  flex: 1; 
+
+  width: 100%;
+  justify-content: center;
+  margin-right: 30px;
+}
+
+.opening-hours {
+  flex: 2; 
+}
+.time {
+  color: whitesmoke;
+  font-weight: bold;
+}
+.text {
+  color: rgb(19, 19, 174);
+  font-weight: bold;
+}
+.web-btn {
+  margin-bottom:20px;
+  background-color: whitesmoke;
+  height: 35px;
+  width: 100px ;
+  color: black;
+  font-weight: bold;
+  margin-right: 70px;
+}
+.rating {
+  color: whitesmoke;
+  font-weight: bold;
+  font-size: large;
+
+}
+.phone-container {
+  display: flex;
+  align-items: center; 
+}
+
+.fa-phone {
+  margin-right: 10px; /
+}
+.phone-number {
+  margin: 0;
+}
+.review-item {
+  border: 1px solid #ccc !important; 
+  border-radius: 10px 10px 10px 10px;
+  padding: 10px;
+  background-color: #2e05aa !important;
+  margin: 0;
+  display: flex;
+  justify-content: left;
+  width: 200px;
+  text-align: left;
+}
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-color:   #432fbf;
+    
+  background: "caption.jpg"
+}
+
+
+.gm-style .gm-style-iw-d::-webkit-scrollbar-track, 
+.gm-style .gm-style-iw-d::-webkit-scrollbar-track-piece,
+.gm-style .gm-style-iw-c,
+.gm-style .gm-style-iw-t::after { 
+  background-color: #2e05aa;
+}
+
+
+.image-container {
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+}
+
+.image {
+  padding-left: 10px;
+  width: 200px;
+  }
+
+.popover {
+  background-color: #2a1855 !important;
+  color: white !important;
+  border: none !important;
+  border-radius: 5px !important;
+}
+
+.pac-container {
+  background-color: #3106b1  !important; 
+  color: white !important; 
+  max-height: 200px !important; 
+  overflow-y: auto !important;
+  border: 1px solid #ccc !important; 
+  border-radius: 5px !important; 
+}
+
+.pac-container .pac-item {
+  background-color: #3106b1  !important;
+  color: white !important; 
+  border: 1px solid #ccc !important; 
+  border-radius: 5px !important; 
+}
+
+.pac-container .pac-item span {
+  color: white !important;
+}
+
+.container {
+  display: flex;
+}
+
+.left-container {
+  margin-left: 50px;
+}
+
+.name {
+  font-size: 20px;
+  color: whitesmoke;
+  width: fit-content;
+}
+.address {
+  width: max-content;
+  color: cornflowerblue;
+  font-size: small;
+  font-weight: bold;
+  padding-bottom: 10px;
+  border-bottom: 1px solid white;
+  
+}
+
+.search-container {
+  background-color: #2e05aa;
+  border-radius: 40px !important; 
+  padding: 10px;
+  width: 500px;
+  color: #fff;
+  height: 80px;     
+}
+
+.search-container input[type="text"] {
+  flex: 1;
+  width: 200px;
+  padding: 10px;
+  border: none;
+  background-color: transparent;
+  color: #fff;
+  outline: none;
+
+}
+
+.search-button {
+  background-color: #4211d4;
+  color: white; 
+  border: none;
+  padding: 10px 15px;
+  border-radius: 25px;
+  cursor: pointer; 
+  margin-left: 200px;
+  margin-bottom: 6px;
+width: 100%;
+height: 100%;
+}
+
+
+
+.search-button i {
+  font-size: 20px; 
+  margin-right: 3px; 
+}
+.search-button::hover {
+  opacity: 0.1;
+}
+
+.line {
+  width: 60% ; 
+  border-bottom: 1px solid #fff;
+  margin-left: 20px;
+  margin-bottom: 10px;
+}
+
+.results-container {
+  height: 600px;
+  overflow-y: scroll;
+  margin-left: 50px;
+}
+
+.results {
+  background-color:#432fbf;
+    padding: 20px;
+  width: 500px;
+  color: #fff;
+  height: fit-content + 10px;
+  overflow-y: scroll;
+}
+
+.result-row {
+  position: relative;
+  background-color: #4408d0;
+  margin-bottom: 10px;
+  padding: 20px;
+  border: 1px solid #fff; 
+  border-radius: 25px; 
+}
+
+#location-display {
+  background-color: darkslateblue;
+  margin-left: 570px;
+  margin-bottom: 300px;
+  height: 600px;
+  width: 700px;
+}
+
+.name-section,
+.review-section {
+  display: inline-block;
+  width: calc(33.33% - 20px); 
+  vertical-align: top;
+  padding: 10px;
+  border-right: 1px solid #fff; 
+  box-sizing: border-box;
+}
+
+.location-section {
+  display: inline-block;
+  width: calc(33.33% - 20px);
+  vertical-align: top;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.name-section {
+  text-align: left;
+}
+
+.review-section {
+  text-align: center;
+}
+
+.location-section {
+  text-align: right;
+}
+
+.times {
+  border: 1px solid #fff; 
+  border-radius: 5px;
+}
+#search-icon {
+  margin-left: 1px;
+}
+
+
+</style>
+  <script src="./script.js"></script>
+  <script src="navbar.js"></script>
+  <script src="https://kit.fontawesome.com/8182c15f47.js" crossorigin="anonymous"></script>
+</head>
+<body>
+ 
+  <div class="talkbox">
+    <nav>
+      <div class="link-background"></div>
+      <ul class="lists">
+        <li>
+          <a href="./index.html">
+            <svg>
+              <use xlink:href="#home">    
+            </svg>
+            <span class="link-text">Home</span>
+          </a>
+        </li>
+        <li>
+          <a href="./Googlemaps.html"> 
+            <svg>
+              <use xlink:href="#inbox">    
+            </svg>
+            <span class="link-text">Inbox</span>
+          </a>
+        </li>
+        <li>
+          <a href="./contact.html"> 
+            <svg>
+              <use xlink:href="#profile">    
+            </svg>
+            <span class="link-text">Profile</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+  
+<svg style=display:none;>
+     <symbol id="home" viewBox="0 0 50 50">
+
+    <path fill="none" stroke="" stroke-width="2" stroke-linecap="round" stroke-miterlimit="10" d="M31,44.738v-8.52
+    c0-1.505-0.69-2.929-1.877-3.87l0,0c-1.826-1.448-4.421-1.448-6.247,0l0,0C21.69,33.288,21,34.712,21,36.218v3.565"/>
+    <line fill="none" stroke="" stroke-width="2" stroke-linecap="round" stroke-miterlimit="10" x1="15" y1="20.223" x2="29" y2="20.223"/>
+    <path fill="none" stroke="" stroke-width="2" stroke-linecap="round" stroke-miterlimit="10" d="M8,19.232
+    L24.681,5.466c0.758-0.632,1.869-0.62,2.612,0.03l15.03,13.144C42.754,19.016,43,19.557,43,20.126v22.892
+    C43,44.113,42.105,45,41,45h-8.6H31H10c-1.105,0-2-0.887-2-1.982V28.151c0-1.095,0.895-1.982,2-1.982h7"/>
+    </symbol>
+    <symbol id="inbox" viewBox="0 0 50 50">
+
+	<path fill="none" stroke-width="2" stroke-miterlimit="10" d="M45.5,39.5h-40c-1.657,0-3-1.343-3-3V23.55
+		c0-0.028,0.022-0.05,0.05-0.05h13.555l0.665,1.989c0.952,3.563,4.29,6.106,8.139,6.115c0.061,0,0.122,0,0.183,0
+		c3.849-0.009,7.187-2.552,8.139-6.115l0.665-1.989H47.45c0.028,0,0.05,0.022,0.05,0.05V37.5C47.5,38.605,46.605,39.5,45.5,39.5z"/>
+	<path fill="none" stroke-width="2" stroke-miterlimit="10" d="M47.5,23.5l-7.109-11.664
+		c-0.556-0.835-1.493-1.336-2.496-1.336H12.106c-1.003,0-1.94,0.501-2.496,1.336L2.5,23.5"/>
+    </symbol>
+    <symbol id="profile" viewBox="0 0 50 50">
+
+	<line fill="none" stroke-width="2" stroke-linecap="round" stroke-miterlimit="10" x1="18.5" y1="37" x2="28.5" y2="37"/>
+	<line fill="none" stroke-width="2" stroke-linecap="round" stroke-miterlimit="10" x1="14.5" y1="42" x2="21.5" y2="42"/>
+	<path fill="none" stroke-width="2" stroke-linecap="round" stroke-miterlimit="10" d="M35.857,27.299
+		C32.753,25.216,29.019,24,25,24C14.735,24,6.323,31.931,5.557,42"/>
+	<path fill="none" stroke-width="2" stroke-linecap="round" stroke-miterlimit="10" d="M35.857,29.299"/>
+	<path fill="none" stroke-width="2" stroke-linecap="round" stroke-miterlimit="10" d="M39.665,30.648"/>
+	<path fill="none" stroke-width="2" stroke-linecap="round" stroke-miterlimit="10" d="M44.443,42
+		c-0.269-3.539-1.483-6.815-3.391-9.574"/>
+	<circle fill="none" stroke="" stroke-width="2" stroke-linecap="round" stroke-miterlimit="10" cx="25.5" cy="17" r="9"/>
+    </symbol>
+</svg>
+</div>
+
+ 
+
+  <div class="main-container">
+    <div class="left-container">
+      <div class="search-container">
+          
+        <input type="text" id="searchInput" placeholder="Search..." >
+
+        <button id="search-button">
+          <i class="fa fa-search" id="search-icon"></i></button>
+        <div id="location-display"></div>
+      </div>     
+    </div>
+
+    <div class="results-container">
+      <div class="results" id="results">
+          
+     </div>
+    </div>
+  </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+</body>
+
+</html>   

@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ListeoKW</title>
+  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <script src="https://kit.fontawesome.com/8182c15f47.js" crossorigin="anonymous"></script>
+  <style>
+    body {
+        background-color: #432fbf;
+    }
+
+    .talkbox {
+        background-color: #432fbf;
+    }
+    .contact-section {
+        background-color: #432fbf;
+    }
+    .contact-section form {
+        background-color: #432fbf;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    .contact-section .form-group {
+        flex: 0 0 calc(33.333% - 10px); 
+        margin-right: 10px;
+    }
+
+    .contact-section .form-group:last-child {
+        margin-right: 0; 
+    }
+   
+    .contact-section .btn-primary {
+        
+            color: white; 
+            border: 0.4px solid gray;
+            padding: 10px 20px;
+            font-size: 16px; 
+            cursor: pointer; 
+            margin-bottom: 40px;
+          
+        }
+
+        .contact-section .btn-primary:hover {
+            opacity: 0.8;
+        }
+
+        .wrapper .icon{
+  position: relative;
+  background-color: #ffffff;
+  border-radius: 50%;
+  margin: 10px;
+  width: 70px;
+  height: 70px;
+  line-height: 50px;
+  font-size: 22px;
+  display: inline-block;
+  align-items: center;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  color: #333;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  
+}
+.wrapper .tooltip {
+  position: absolute;
+  top: 0;
+  line-height: 1.5;
+  font-size: 14px;
+  height: fit-content;
+  width: fit-content;
+  background-color: #ffffff;
+  color: #ffffff;
+  margin-left: 100px;
+  border-radius: 5px;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+}
+.wrapper .tooltip::before {
+  position: absolute;
+  content: "";
+  height: 8px;
+  width: 8px;
+  background-color: #ffffff;
+  bottom: -3px;
+  left: 50%;
+  transform: translate(-50%) rotate(45deg);
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+.wrapper .icon:hover .tooltip {
+  top: -45px;
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+.wrapper .icon:hover span,
+.wrapper .icon:hover .tooltip {
+  text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.1);
+}
+.wrapper .facebook:hover,
+.wrapper .facebook:hover .tooltip,
+.wrapper .facebook:hover .tooltip::before {
+  background-color: #3b5999;
+  color: #ffffff;
+}
+.wrapper .twitter:hover,
+.wrapper .twitter:hover .tooltip,
+.wrapper .twitter:hover .tooltip::before {
+  background-color: #46c1f6;
+  color: #ffffff;
+}
+.wrapper .instagram:hover,
+.wrapper .instagram:hover .tooltip,
+.wrapper .instagram:hover .tooltip::before {
+  background-color: #de2a93;
+  color: #ffffff;
+}
+.wrapper .github:hover,
+.wrapper .github:hover .tooltip,
+.wrapper .github:hover .tooltip::before {
+  background-color: #333333;
+  color: #ffffff;
+}
+.wrapper .youtube:hover,
+.wrapper .youtube:hover .tooltip,
+.wrapper .youtube:hover .tooltip::before {
+  background-color: #de463b;
+  color: #ffffff;
+  
+}
+</style>
+<script src="navbar.js"></script>
+
+</head>
+<body>
+    <div class="talkbox">
+        <nav>
+          <div class="link-background"></div>
+          <ul class="lists">
+            <li>
+              <a href="./index.html">
+                <svg>
+                  <use xlink:href="#home">    
+                </svg>
+                <span class="link-text">Home</span>
+              </a>
+            </li>
+            <li>
+              <a href="./Googlemaps.html"> 
+                <svg>
+                  <use xlink:href="#inbox">    
+                </svg>
+                <span class="link-text">Inbox</span>
+              </a>
+            </li>
+            <li>
+              <a href="./contact.html">
+                <svg>
+                  <use xlink:href="#profile">    
+                </svg>
+                <span class="link-text">Profile</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      
+    <svg style=display:none;>
+         <symbol id="home" viewBox="0 0 50 50">
+    
+        <path fill="none" stroke="" stroke-width="2" stroke-linecap="round" stroke-miterlimit="10" d="M31,44.738v-8.52
+        c0-1.505-0.69-2.929-1.877-3.87l0,0c-1.826-1.448-4.421-1.448-6.247,0l0,0C21.69,33.288,21,34.712,21,36.218v3.565"/>
+        <line fill="none" stroke="" stroke-width="2" stroke-linecap="round" stroke-miterlimit="10" x1="15" y1="20.223" x2="29" y2="20.223"/>
+        <path fill="none" stroke="" stroke-width="2" stroke-linecap="round" stroke-miterlimit="10" d="M8,19.232
+        L24.681,5.466c0.758-0.632,1.869-0.62,2.612,0.03l15.03,13.144C42.754,19.016,43,19.557,43,20.126v22.892
+        C43,44.113,42.105,45,41,45h-8.6H31H10c-1.105,0-2-0.887-2-1.982V28.151c0-1.095,0.895-1.982,2-1.982h7"/>
+        </symbol>
+        <symbol id="inbox" viewBox="0 0 50 50">
+    
+        <path fill="none" stroke-width="2" stroke-miterlimit="10" d="M45.5,39.5h-40c-1.657,0-3-1.343-3-3V23.55
+            c0-0.028,0.022-0.05,0.05-0.05h13.555l0.665,1.989c0.952,3.563,4.29,6.106,8.139,6.115c0.061,0,0.122,0,0.183,0
+            c3.849-0.009,7.187-2.552,8.139-6.115l0.665-1.989H47.45c0.028,0,0.05,0.022,0.05,0.05V37.5C47.5,38.605,46.605,39.5,45.5,39.5z"/>
+        <path fill="none" stroke-width="2" stroke-miterlimit="10" d="M47.5,23.5l-7.109-11.664
+            c-0.556-0.835-1.493-1.336-2.496-1.336H12.106c-1.003,0-1.94,0.501-2.496,1.336L2.5,23.5"/>
+        </symbol>
+        <symbol id="profile" viewBox="0 0 50 50">
+    
+        <line fill="none" stroke-width="2" stroke-linecap="round" stroke-miterlimit="10" x1="18.5" y1="37" x2="28.5" y2="37"/>
+        <line fill="none" stroke-width="2" stroke-linecap="round" stroke-miterlimit="10" x1="14.5" y1="42" x2="21.5" y2="42"/>
+        <path fill="none" stroke-width="2" stroke-linecap="round" stroke-miterlimit="10" d="M35.857,27.299
+            C32.753,25.216,29.019,24,25,24C14.735,24,6.323,31.931,5.557,42"/>
+        <path fill="none" stroke-width="2" stroke-linecap="round" stroke-miterlimit="10" d="M35.857,29.299"/>
+        <path fill="none" stroke-width="2" stroke-linecap="round" stroke-miterlimit="10" d="M39.665,30.648"/>
+        <path fill="none" stroke-width="2" stroke-linecap="round" stroke-miterlimit="10" d="M44.443,42
+            c-0.269-3.539-1.483-6.815-3.391-9.574"/>
+        <circle fill="none" stroke="" stroke-width="2" stroke-linecap="round" stroke-miterlimit="10" cx="25.5" cy="17" r="9"/>
+        </symbol>
+    </svg>
+    </div>
+    
+  <section class="contact-section" style="background-color: #432fbf; color: white;">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <h2>Contact Us</h2>
+                <p>If you have any questions or inquiries, please feel free to reach out to us.</p>
+            </div>
+            <div class="col-md-8">
+                <form>
+                    <div class="form-group">
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"><i class="fas fa-user"></i></span>
+                            </div>
+                            <input type="text" class="form-control" id="name" placeholder="Your Name">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"><i class="fas fa-envelope"></i></span>
+                            </div>
+                            <input type="email" class="form-control" id="email" placeholder="Your Email">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"><i class="fas fa-comment"></i></span>
+                            </div>
+                            <textarea class="form-control" id="message" rows="4" placeholder="Your Message"></textarea>
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <button type="submit" class="btn btn-primary"><i class="fas fa-paper-plane"></i> Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>  
+</div>
+
+<div class="wrapper">
+    <a href="https://www.facebook.com" class="icon facebook">
+      <div class="tooltip">Facebook</div>
+      <span><i class="fab fa-facebook-f"></i></span>
+    </a>
+    <a href="https://twitter.com" class="icon twitter">
+      <div class="tooltip">Twitter</div>
+      <span><i class="fab fa-twitter"></i></span>
+    </a>
+    <a href="https://www.instagram.com/nayef_alhajraf/" class="icon instagram">
+      <div class="tooltip">Instagram</div>
+      <span><i class="fab fa-instagram"></i></span>
+    </a>
+    <a href="https://github.com/minecraftswingman" class="icon github">
+      <div class="tooltip">Github</div>
+      <span><i class="fab fa-github"></i></span>
+    </a>
+    <a href="https://www.youtube.com" class="icon youtube">
+      <div class="tooltip">Youtube</div>
+      <span><i class="fab fa-youtube"></i></span>
+    </a>
+  </div>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+
+</body>
+</html>
