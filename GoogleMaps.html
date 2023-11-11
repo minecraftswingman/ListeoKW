@@ -41,6 +41,10 @@
   justify-content: center;
   margin-right: 30px;
 }
+.main-container {
+ position: absolute !important;
+  justify-content: center !important;
+}
 
 .opening-hours {
   flex: 2; 
@@ -225,12 +229,14 @@ height: 100%;
 }
 
 .results {
-  background-color:#432fbf;
+  background-color:#432fbf !important;
     padding: 20px;
   width: 500px;
   color: #fff;
   height: fit-content + 10px;
   overflow-y: scroll;
+    box-sizing: border-box; /* Add this property */
+
 }
 
 .result-row {

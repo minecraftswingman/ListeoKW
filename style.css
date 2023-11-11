@@ -172,8 +172,7 @@ body {
   color: #fff;
   font-weight: bold;
   text-transform: uppercase;
-  margin-left: 550px;
-  margin-top: 60px;
+  margin-left: 39%;
 
 }
 
@@ -182,9 +181,10 @@ body {
   color: #d1d1d1;
   text-transform: uppercase;
   margin: 20px 0;
-  margin-left: 150px;
-  margin-top:50px;
+  margin-left: 11%;
+  margin-top:4%;
 }
+
 
 
 .intro button {
